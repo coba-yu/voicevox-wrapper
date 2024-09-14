@@ -2,6 +2,8 @@
 
 ## Setup
 
-### Rye
+uv: https://docs.astral.sh/uv/getting-started/installation/
 
-Install Rye following the instructions at https://rye-up.com/.
+```shell
+uv sync
+```
