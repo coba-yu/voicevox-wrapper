@@ -2,9 +2,7 @@ use std::fs::File;
 use std::io::BufReader;
 use rodio::{Decoder, OutputStream, Sink};
 
-fn main() {
-    let file_path = "audio.wav";
-
+pub fn play(file_path: &str) {
     // _stream must live as long as the sink
     let (_stream, stream_handle) = OutputStream::try_default().unwrap();
     let sink = Sink::try_new(&stream_handle).unwrap();
