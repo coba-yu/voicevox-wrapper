@@ -14,7 +14,7 @@ pub struct VoiceVoxEngine {
 
 impl VoiceVoxEngine {
     pub fn new() -> Self {
-        VoiceVoxEngine {
+        Self {
             url: String::from("http://127.0.0.1"),
             port: 50021,
             client: Client::new(),

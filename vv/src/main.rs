@@ -1,10 +1,13 @@
-use vv::{sound, voicevox};
+use vv::platform::twitch::Twitch;
+use vv::sound;
+use vv::voicevox::VoiceVoxEngine;
 
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
-    let voicevox_engine = voicevox::VoiceVoxEngine::new();
+    let voicevox_engine = VoiceVoxEngine::new();
 
-    let text = "こんにちは、音声合成の世界へようこそなのだ";
+    let platform = Twitch::new();
+    let text = platform.get_chat_message();
     let text_id = "xxx";
 
     let audio_path = voicevox_engine.synthesis(&text_id, &text).await;
